@@ -122,7 +122,6 @@ tictactoe
     def computer_move
       puts "Computer's Move"
       move = best_move
-      puts"#{get_winning_move}"
       @board[move] = @comp
       
       if win_game(@comp) == 1
