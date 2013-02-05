@@ -94,7 +94,7 @@ tictactoe
       
       loop do
         move = gets.chomp    # gets receives input from console, chomp cleans off any trailing white space 
-        if @board[move.to_i-1] == @newb || @board[move.to_i-1] == @comp      #Can't take a spot that's taken!
+        if @board[move.to_i-1] == @newb || @board[move.to_i-1] == @comp      #Can't take a spot that's taken
           puts "You blind??  Spot not available!"
           redo
         else
@@ -121,7 +121,7 @@ tictactoe
   
     def computer_move
       puts "Computer's Move"
-      move = get_winning_move
+      move = best_move
       puts"#{get_winning_move}"
       @board[move] = @comp
       
@@ -161,7 +161,7 @@ tictactoe
  
  # DEFINING COMPUTER MOVES! -----------------
  
-    def get_winning_move
+    def best_move
       
       @winning_rows.each do |row|        #Check if comp has 2 pieces in a row - can win next move
         if num_in_column(row, @comp) == 2
